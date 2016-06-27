@@ -1,0 +1,26 @@
+use v6;
+
+use Sparrowdo;
+
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic',
+  parameters => %( list => 'git-core carton cpanminus telnet' )
+);
+
+task_run  %(
+  task => 'install-psgi-app',
+  plugin => 'perl-app',
+  parameters => %(
+    'app_source_url' => 'https://github.com/melezhik/web-app.git',
+    'git_branch' => 'master',
+    'http_port' => 3030
+  )
+);
+
+
+
