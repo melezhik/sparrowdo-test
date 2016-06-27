@@ -9,13 +9,21 @@ use Sparrowdo;
 task_run  %(
   task => 'install my packages',
   plugin => 'package-generic',
-  parameters => %( list => 'cpanminus' )
+  parameters => %( list => 'cpanminus git-core' )
 );
 
 task_run  %(
   task => 'create user',
   plugin => 'user',
   parameters => %( name => 'foo' )
+);
+
+task_run  %(
+  task => 'upgrade sparrow',
+  plugin => 'cpan-package',
+  parameters => %( 
+    list => 'https://github.com/melezhik/outthentic.git https://github.com/melezhik/sparrow.git',
+  ),
 );
 
 
