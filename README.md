@@ -4,7 +4,7 @@ A collection of sparrowdo scenarios.
 
 # Prerequisites
 
-I am running these examples on vagrant/Ubuntu 15.04. Running on other platforms will probably require amending some sparrowfile or even changing
+I am running these examples on vagrant/Ubuntu 15.04. Running on other platforms will probably require amending some sparrowfiles or even changing
 sparrow plugins itself, anyway let me know if you have any issues and I try to help you ASAP.
 
 # USAGE
