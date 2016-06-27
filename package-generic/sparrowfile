@@ -13,6 +13,6 @@ set_spl %(
 task_run  %(
   task => 'install my packages',
   plugin => 'package-generic-dev',
-  parameters => %( list => 'cpanminus git-core' )
+  parameters => %( list => 'git-core' )
 );
 
