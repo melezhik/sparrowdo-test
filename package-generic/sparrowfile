@@ -2,10 +2,6 @@ use v6;
 
 use Sparrowdo;
 
-use v6;
-
-use Sparrowdo;
-
 set_spl %(
     package-generic-dev => 'https://github.com/melezhik/package-generic.git'
 );

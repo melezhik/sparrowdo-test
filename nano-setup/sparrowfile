@@ -1,0 +1,14 @@
+use Sparrowdo;
+
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'set my nano rc up',
+  plugin => 'nano-setup',
+  parameters => %( 
+    tabsize => 2
+  )
+);
+
