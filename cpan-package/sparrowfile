@@ -9,7 +9,7 @@ use Sparrowdo;
 task_run  %(
   task => 'install my packages',
   plugin => 'package-generic',
-  parameters => %( list => 'cpanminus git-core' )
+  parameters => %( list => 'cpanminus git' )
 );
 
 task_run  %(

@@ -11,6 +11,14 @@ set_spl %(
 );
 
 task_run  %(
+  task => 'upgrade sparrow',
+  plugin => 'cpan-package',
+  parameters => %( 
+    list => 'https://github.com/melezhik/outthentic.git https://github.com/melezhik/sparrow.git',
+  ),
+);
+
+task_run  %(
   task => 'install my packages',
   plugin => 'package-generic-dev',
   parameters => %( list => 'git curl' )
