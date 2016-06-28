@@ -8,7 +8,8 @@ task_run  %(
   task => 'set my nano rc up',
   plugin => 'nano-setup',
   parameters => %( 
-    tabsize => 2
+    tabsize => 2,
+    user => 'vagrant'
   )
 );
 
