@@ -23,6 +23,8 @@ task_run  %(
   plugin => 'cpan-package',
   parameters => %( 
     list => 'https://github.com/melezhik/outthentic.git https://github.com/melezhik/sparrow.git',
+    http_proxy =>  $Sparrowdo::HttpProxy,
+    https_proxy => $Sparrowdo::HttpsProxy,
   ),
 );
 

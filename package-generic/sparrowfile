@@ -2,21 +2,9 @@ use v6;
 
 use Sparrowdo;
 
-set_spl %(
-    package-generic-dev => 'https://github.com/melezhik/package-generic.git'
-);
-
-task_run  %(
-  task => 'upgrade sparrow',
-  plugin => 'cpan-package',
-  parameters => %( 
-    list => 'https://github.com/melezhik/outthentic.git https://github.com/melezhik/sparrow.git',
-  ),
-);
-
 task_run  %(
   task => 'install my packages',
-  plugin => 'package-generic-dev',
+  plugin => 'package-generic',
   parameters => %( list => 'git curl' )
 );
 
