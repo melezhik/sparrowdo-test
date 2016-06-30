@@ -1,0 +1,12 @@
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'check my process',
+  plugin => 'proc-validate',
+  parameters => %(
+    pid_file => '/var/run/nginx.pid',
+    footprint => 'nginx.*master'
+  )
+);
