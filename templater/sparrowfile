@@ -1,0 +1,20 @@
+
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'install my config',
+  plugin => 'templater',
+  parameters => %(
+    variables => %(
+      name => 'sparrowdo',
+      language => 'perl6'
+    ),
+    target => '/etc/foo.conf',
+    owner => 'root',
+    mode => '644',
+    source => slurp 'templates/foo.conf.tmpl'
+  )
+);
+
