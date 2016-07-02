@@ -1,0 +1,27 @@
+use v6;
+
+use Sparrowdo;
+
+task_run %(
+  task => 'enable nginx service',
+  plugin => 'service',
+  parameters => %( action => 'enable', service => 'nginx' )
+);
+
+task_run %(
+  task => 'start nginx service',
+  plugin => 'service',
+  parameters => %( action => 'start', service => 'nginx' )
+);
+
+task_run %(
+  task => 'disable nginx service',
+  plugin => 'service',
+  parameters => %( action => 'disable', service => 'nginx' )
+);
+
+task_run %(
+  task => 'stop nginx service',
+  plugin => 'service',
+  parameters => %( action => 'stop', service => 'nginx' )
+);
