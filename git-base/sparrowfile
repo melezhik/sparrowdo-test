@@ -3,6 +3,12 @@ use v6;
 use Sparrowdo;
 
 task_run  %(
+  task => 'install git',
+  plugin => 'package-generic',
+  parameters => %( list => 'git' )
+);
+
+task_run  %(
   task => 'setup git',
   plugin => 'git-base',
   parameters => %(
