@@ -1,0 +1,35 @@
+use v6;
+
+use Sparrowdo;
+
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic',
+  parameters => %( list => 'git' )
+);
+
+task_run  %(
+  task => 'create user',
+  plugin => 'user',
+  parameters => %( name => 'baz' )
+);
+
+
+task_run  %(
+  task => 'cpan-package',
+  plugin => 'cpan-package',
+  parameters => %( 
+    list => 'CGI DBI',
+    user => 'baz',
+    install-base => '/home/baz',
+    http_proxy   => $Sparrowdo::HttpProxy,
+    https_proxy  => $Sparrowdo::HttpsProxy,
+  ),
+);
+
+
+
