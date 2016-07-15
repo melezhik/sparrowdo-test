@@ -2,10 +2,6 @@ use v6;
 
 use Sparrowdo;
 
-use v6;
-
-use Sparrowdo;
-
 task_run  %(
   task => 'install my packages',
   plugin => 'package-generic',

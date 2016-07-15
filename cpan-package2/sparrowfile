@@ -1,0 +1,20 @@
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'install cpanm client',
+  plugin => 'package-generic',
+  parameters => %( list => 'cpanminus' )
+);
+
+task_run  %(
+  task => 'cpan-package',
+  plugin => 'cpan-package',
+  parameters => %( 
+    list => 'CGI',
+  ),
+);
+
+
+
