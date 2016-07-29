@@ -1,0 +1,11 @@
+use v6;
+
+use Sparrowdo;
+
+task_run  %(
+  task => 'check my disk',
+  plugin => 'df-check',
+  parameters => %(
+    threshold => 70
+  )
+);
