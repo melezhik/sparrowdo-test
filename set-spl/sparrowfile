@@ -1,0 +1,22 @@
+use v6;
+
+use Sparrowdo;
+
+set_spl %(
+    package-generic-dev => 'https://github.com/melezhik/package-generic.git',
+    df-check-dev => 'https://github.com/melezhik/df-check.git'
+);
+
+
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic-dev',
+  parameters => %( list => 'curl' )
+);
+
+task_run  %(
+  task => 'check my disk',
+  plugin => 'df-check-dev',
+  parameters => %( threshold => 70 )
+);
+
