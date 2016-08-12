@@ -9,7 +9,7 @@ task_run  %(
   plugin => 'nano-setup',
   parameters => %( 
     tabsize => 2,
-    user => 'root'
+    user => 'whatsup'
   )
 );
 
