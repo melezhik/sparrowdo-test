@@ -2,5 +2,24 @@ use v6;
 
 use Sparrowdo;
 
-module_run 'Cpm', %( list => 'Log::Log4perl Moose DBIx::Class Moo', verbose => 1, install-base => '/tmp/foo/bar' );
+task_run %(
+
+  task => 'create foo user', 
+  plugin => 'user', 
+  parameters => %( name => 'foo')
+
+);
+
+module_run 'Cpm', %( 
+  list => 'Log::Log4perl Moose DBIx::Class Moo', 
+  verbose => 1, 
+  install-base => '/tmp/foo/bar' 
+);
+
+module_run 'Cpm', %( 
+  list    => 'Log::Log4perl Moose DBIx::Class Moo', 
+  verbose => 0, 
+  user    => 'foo' ,
+  install-base => '/home/foo/bar' 
+);
 
