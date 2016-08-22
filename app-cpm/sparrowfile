@@ -1,0 +1,6 @@
+use v6;
+
+use Sparrowdo;
+
+module_run 'Cpm', %( list => 'Log::Log4perl Moose DBIx::Class Moo', verbose => 1, install-base => '/tmp/foo/bar' );
+
