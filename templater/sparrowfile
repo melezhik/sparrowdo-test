@@ -1,19 +1,34 @@
 
-use v6;
+set_spl %( templater-dev => 'https://github.com/melezhik/templater.git' );
 
-use Sparrowdo;
+task_run %( 
+
+  task    => 'create example user',
+  plugin  => 'user',
+  parameters => %( name => 'Bill' )  
+
+);
+
+task_run %( 
+
+  task    => 'create example group',
+  plugin  => 'group',
+  parameters => %( name => 'BillGroup' )  
+
+);
 
 task_run  %(
   task => 'install my config',
-  plugin => 'templater',
+  plugin => 'templater-dev',
   parameters => %(
     variables => %(
       name => 'sparrowdo',
       language => 'perl6'
     ),
-    target => '/etc/foo.conf',
-    owner => 'root',
-    mode => '644',
+    target  => '/etc/foo.conf',
+    owner   => 'Bill',
+    group   => 'BillGroup',
+    mode    => '664',
     source => slurp 'templates/foo.conf.tmpl'
   )
 );

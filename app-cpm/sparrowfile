@@ -11,13 +11,7 @@ task_run %(
 );
 
 module_run 'Cpm', %( 
-  list => 'Log::Log4perl Moose DBIx::Class Moo', 
-  verbose => 1, 
-  install-base => '/tmp/foo/bar' 
-);
-
-module_run 'Cpm', %( 
-  list    => 'Log::Log4perl Moose DBIx::Class Moo', 
+  list    => 'CGI DBIx::Class', 
   verbose => 0, 
   user    => 'foo' ,
   install-base => '/home/foo/bar' 
