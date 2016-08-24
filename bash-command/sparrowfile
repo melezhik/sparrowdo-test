@@ -1,0 +1,23 @@
+
+set_spl %( bash-dev => 'https://github.com/melezhik/bash.git' );
+
+
+task_run %(
+  task => 'server uptime',
+  plugin => 'bash-dev',
+  parameters => %( command => 'uptime' )
+);
+
+task_run %(
+
+  task => 'create foo user', 
+  plugin => 'user', 
+  parameters => %( name => 'foo' )
+
+);
+
+task_run %(
+  task => 'user pwd',
+  plugin => 'bash-dev',
+  parameters => %( command => 'echo $HOME', user => 'foo' , debug => 1 )
+);
