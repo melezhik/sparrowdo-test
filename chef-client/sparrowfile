@@ -1,0 +1,9 @@
+module_run 'Chef::Client', %(
+  run-list => [
+    "recipe[foo::bar]",
+    "role[baz]"
+  ],
+  log-level => 'info'
+);
+
+

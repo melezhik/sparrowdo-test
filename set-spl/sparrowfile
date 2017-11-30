@@ -17,6 +17,6 @@ task_run  %(
 task_run  %(
   task => 'check my disk',
   plugin => 'df-check-dev',
-  parameters => %( threshold => 70 )
+  parameters => %( threshold => 90 )
 );
 
