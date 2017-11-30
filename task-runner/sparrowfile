@@ -1,0 +1,23 @@
+use IO::Glob;
+
+directory "tmp/";
+
+for glob("js/*.js") -> $file { 
+
+  task-run "minify $file" , 'js-minify', %(
+      in  => $file.absolute,      
+      out => "tmp/" ~ ( $file.basename ),      
+  );
+
+}
+
+for glob("images/*.png") -> $file { 
+
+  task-run "compress $file", "png-compress", %(
+      in  => $file.absolute,      
+      out => "tmp/" ~ ( $file.basename ),      
+      compression => 8
+  );
+
+}
+
